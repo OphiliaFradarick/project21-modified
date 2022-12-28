@@ -3,10 +3,10 @@ class Ground{
         var ground_options = {
             isStatic:true
         }
-        ground = Bodies.rectangle(x,y,w,h,ground_options)
+        this.ground = Bodies.rectangle(x,y,w,h,ground_options)
         this.w = w
         this.h = h
-        World.add(world, ground)
+        World.add(world, this.ground)
     }
 
     display(){
@@ -17,4 +17,4 @@ class Ground{
         rect(pos.x,pos.y,this.w,this.h)
         pop()
     }
-}   
+} 
