@@ -1,4 +1,5 @@
 
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -26,9 +27,9 @@ function setup() {
 	World.add(world,ball)
 
 	Engine.run(engine);
-	groundObj = new Ground(450,770,200,20)
-	leftSide = new Ground(650,765,10,70)
-	rightSide = new Ground(700,765,10,70)
+	groundObj = new Ground(450,770,900,20)
+	leftSide = new Ground(650,730,10,70)
+	rightSide = new Ground(790,730,10,70)
 }
 
 
@@ -37,6 +38,7 @@ function draw() {
   background(0);
   
   drawSprites();
+  ellipseMode(RADIUS)
   ellipse(ball.position.x,ball.position.y,40,40)
   verticalForce()
 
@@ -47,9 +49,13 @@ function draw() {
 
 function verticalForce(){
 	if(keyCode == UP_ARROW){
-		Matter.Body.applyForce(ball,{x:85,y:-85},{x:0,y:-0.04})
+		Matter.Body.applyForce(ball,{x:0,y:0},{x:35,y:-35})
 	}
 }
+
+
+
+
 
 
 
